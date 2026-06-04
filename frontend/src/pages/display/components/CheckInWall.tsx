@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import * as echarts from 'echarts'
-import type { Participant, CheckInStats } from '../../types'
-import { wsService } from '../../services/websocket'
-import { getAvatarColor, getInitials, animateNumber } from '../../utils'
+import type { Participant, CheckInStats } from '../../../types'
+import { wsService } from '../../../services/websocket'
+import { getAvatarColor, getInitials, animateNumber } from '../../../utils'
 
 interface CheckInWallProps {
   eventId: number

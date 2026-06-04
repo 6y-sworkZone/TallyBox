@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react'
-import type { Participant, Winner } from '../../types'
-import { wsService } from '../../services/websocket'
-import { getAvatarColor, getInitials } from '../../utils'
+import type { Participant, Winner } from '../../../types'
+import { wsService } from '../../../services/websocket'
+import { getAvatarColor, getInitials } from '../../../utils'
 
 interface LotteryCanvasProps {
   participants: Participant[]

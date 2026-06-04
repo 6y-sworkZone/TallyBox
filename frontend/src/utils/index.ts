@@ -68,3 +68,52 @@ export const downloadBlob = (blob: Blob, filename: string): void => {
   document.body.removeChild(link)
   URL.revokeObjectURL(url)
 }
+
+export const getDeviceId = generateDeviceId
+
+export const formatNumber = (num: number): string => {
+  return num.toLocaleString('zh-CN')
+}
+
+export const generateId = (): string => {
+  return Math.random().toString(36).substring(2, 10)
+}
+
+export const getAvatarColor = (name: string): string => {
+  const colors = ['#E53935', '#FF6B6B', '#FFD700', '#4CAF50', '#2196F3', '#9C27B0', '#FF9800', '#00BCD4']
+  let hash = 0
+  for (let i = 0; i < name.length; i++) {
+    hash = name.charCodeAt(i) + ((hash << 5) - hash)
+  }
+  return colors[Math.abs(hash) % colors.length]
+}
+
+export const getInitials = (name: string): string => {
+  if (!name) return '?'
+  return name.charAt(0).toUpperCase()
+}
+
+export const animateNumber = (
+  element: HTMLElement,
+  from: number,
+  to: number,
+  duration: number = 1000
+): void => {
+  const start = performance.now()
+  const update = (currentTime: number) => {
+    const elapsed = currentTime - start
+    const progress = Math.min(elapsed / duration, 1)
+    const eased = 1 - Math.pow(1 - progress, 3)
+    const current = Math.round(from + (to - from) * eased)
+    element.textContent = current.toLocaleString('zh-CN')
+    if (progress < 1) {
+      requestAnimationFrame(update)
+    }
+  }
+  requestAnimationFrame(update)
+}
+
+export const checkSensitiveWords = (text: string): boolean => {
+  const sensitivePatterns = [/fuck/i, /shit/i, /damn/i, /草/, /卧槽/, /操/]
+  return sensitivePatterns.some(pattern => pattern.test(text))
+}

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react'
-import type { Danmaku } from '../../types'
-import { wsService } from '../../services/websocket'
-import { generateId } from '../../utils'
+import type { Danmaku } from '../../../types'
+import { wsService } from '../../../services/websocket'
+import { generateId } from '../../../utils'
 
 interface DanmakuItem extends Danmaku {
   top: number

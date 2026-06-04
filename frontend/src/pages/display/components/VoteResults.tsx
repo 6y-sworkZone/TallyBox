@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import * as echarts from 'echarts'
-import type { VoteOption } from '../../types'
-import { formatNumber } from '../../utils'
+import type { VoteOption } from '../../../types'
+import { formatNumber } from '../../../utils'
 
 interface VoteResultsProps {
   voteId: number

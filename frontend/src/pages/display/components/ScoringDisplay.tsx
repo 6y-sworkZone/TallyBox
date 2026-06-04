@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react'
 import * as echarts from 'echarts'
-import type { ScoringDimension, JudgeScore } from '../../types'
-import { wsService } from '../../services/websocket'
-import { formatNumber } from '../../utils'
+import type { ScoringDimension, JudgeScore } from '../../../types'
+import { wsService } from '../../../services/websocket'
+import { formatNumber } from '../../../utils'
 
 interface ScoreResult {
   targetName: string
